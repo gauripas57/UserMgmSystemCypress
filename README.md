@@ -111,6 +111,7 @@ Verify that the resource is retrieved successfully and has the expected content.
 
 #### Test Results Report
 ![TestReport](https://github.com/gauripas57/UserMgmSystemCypress/blob/main/Images/TestReportResults.png)
+![CypressRunReport](https://github.com/gauripas57/UserMgmSystemCypress/blob/main/Images/CypressRun.png)
 
 
 
