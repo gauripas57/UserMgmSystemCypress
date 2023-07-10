@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+</head>
+<body>
+<h1>Welcome</h1>
+<div class="form-row">
+    <div class="col-md-6 form-group">
+    <a th:href="@{/registration_form}">Go to User Registration Form</a>
+    </div>
+    <div class="col-md-6 form-group">
+    <a th:href="@{/login_form}">Go to User Login</a>
+    </div>
+</div>
+</body>
+</html>

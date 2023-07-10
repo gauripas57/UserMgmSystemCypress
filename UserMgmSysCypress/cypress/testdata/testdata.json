@@ -1,0 +1,15 @@
+{
+    "test1": {
+      "name": "Rajan",
+      "email": "Rajan.doe@gmail.com",
+      "password": "mypassword"
+    },
+    "test2": {
+      "name": "Tajan",
+      "email": "Tajan.doe@gmail.com",
+      "password": "mynotpassword"
+    }
+}
+  
+    
+  
