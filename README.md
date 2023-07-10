@@ -110,6 +110,8 @@ Get a protected resource using the API and the token obtained from the login.
 Verify that the resource is retrieved successfully and has the expected content.
 
 #### Test Results Report
+![TestReport](https://github.com/gauripas57/UserMgmSystemCypress/blob/main/Images/TestReportResults.png)
+
 
 
 
