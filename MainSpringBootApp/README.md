@@ -53,6 +53,8 @@ Verify that the registration was successful by checking that the user's informat
 
 #### AWS DynamoDB
 
+![AWS DynamoDB](https://github.com/gauripas57/UserMgmSystemCypress/blob/main/Images/AWS%20Dynamodb.png)
+
 
 
 
