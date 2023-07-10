@@ -10,8 +10,8 @@ This project implements a web application with two main functionalities: registr
 ### Table of Contents
 Installation
 Usage
-Test Cases
-Test Results Report
+API Endpoints
+AWS DynamoDB
 
 
 #### Installation
@@ -40,16 +40,79 @@ Step 5: Error handling : Duplicate registered user is prohitibed & checked by un
 
 Step 6: To verify API endpoints Postman/ Cypress automation can be used
 
+#### API Endpoints
+**Register API** <br>
+Method: POST <br>
+baseUrl: http://localhost:8080 <br>
+Endpoint: /checkRegisteredUser <br>
+Description: Verifies that the registration was successful by checking that the user's information is now stored in the DynamoDB table.
+Request Body: 
+```Json
+{
+  "name": "Rajan",
+  "email": "Rajan.doe@gmail.com"
+}
 
+```
+Response: 
+```
+{
+  "userid": "096f2c5d-fa60-4d59-8960-9b7147d1f024",
+  "name": "Rajan",
+  "email": "Rajan.doe@gmail.com",
+  "token": null
+}
 
+```
+**Login API** <br>
 
-**Test Case: User Registration**
+Method: GET <br>
+baseUrl: http://localhost:8080 <br>
+Endpoint: /user/{userid} <br>
+Description: Verifies that the login was successful by checking that the API returns a valid token. <br>
+Response:
+```
+{
+  "userid": "adba76bc-ce0d-44",
+  "name": "Vedant",
+  "email": "vedant@gmail.com",
+  "token": "eyJhbGc"
+}
 
-Test Steps:
+```
+**Unsuccessful API response for invalid credentials** <br>
+Method: POST <br>
+baseUrl: http://localhost:8080 <br>
+Endpoint: /checkLogin <br>
+Description: Verify that the login was unsuccessful by checking that the API returns an error message. <br>
+Request Body:
+```Json
+{
+  "email": "Invalid.doe@gmail.com",
+  "password": "sdsdfs",
+}
 
-Fill in the registration form with valid user information.
-Submit the form.
-Verify that the registration was successful by checking that the user's information is now stored in the DynamoDB table.
+```
+Response:
+```
+"message": "Invalid username or password"
+
+```
+**Show Protected resources after valid login & token.** <br>
+Method: GET <br>
+baseUrl:http://localhost:8080 <br>
+Endpoint: /private/user/{userid} <br>
+headers: Authorization Bearer token <br>
+Description: Get a protected resource using the API and the token obtained from the login.Verify that the resource is retrieved successfully and has the expected content.  <br>
+Response:
+```
+{
+    "userid": "258f2123a",
+    "name": "Rajan",
+    "email": "Rajan.doe@gmail.com",
+    "token": "eyJhdoJhYw"
+}
+```
 
 #### AWS DynamoDB
 
